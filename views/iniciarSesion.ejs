@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%-include("template/head")%>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap5/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Inicio de Sesion</title>
+</head>
+
+<body>
+    <header>
+        <%-include("template/header")%>
+    </header>
+
+    <div class="fw-bold text-center pt-5">
+        <h1>!Bienvenidos a Criolipolisis Argentina</h1>
+    </div>
+
+
+
+    </form>
+
+
+    <div class="container">
+        
+            <form action="#" class="contenedorIniciar">
+                <h2 class="fw-bold text-center pt-5">INICIAR SESION</h2>
+
+                <div class="form-group">
+                    <label for="text" class="control-label col-md-8"></label>
+                    <div class=" col-mb-12">
+                        <input class="form-control" type="email" id="correo" placeholder="Correo Electronico:">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="control-label col-md-8"></label>
+                    <div class="col-md-12">
+                        <input type="password" class="form-control" id="correo" placeholder="Contraseña:">
+                    </div>
+                </div>
+                <br>
+                <div class="mb-4 form-check"id=check>
+                    <input type="checkbox" name="connected" class="form-check-input">
+                    <label for="connected" class="form-check-label">Mantenerme conectado</label>
+                </div>
+    
+                <div class="form-group">
+                    <div class="col-md-12 col -md-offset-2" id="botonIniciar">
+                        <button class="btn btn-primary col-md-12 "id="botonIniciar" type="submit">INICIAR SESION</button>
+                    </div>
+                </div>
+    
+                <div class="form-group d-flex justify content"id=soporte>
+                    <span>No tienes cuenta? <a href="#">Recuperar Contraseña</a></span>
+                    <span><a href="/registrate.ejs">Registrate</a></span>
+                </div>
+            </form>
+            <br>
+
+             
+    </div>
+
+    <footer>
+        <%-include("template/footer")%>
+    </footer>
+</body>
+
+</html>
