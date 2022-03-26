@@ -2,18 +2,19 @@
 <html lang="es">
 
 <head>
-    <%-include("template/head")%>
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap5/bootstrap.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="/css/styles.css">
     <title>Inicio de Sesion</title>
 </head>
 
 <body>
     <header>
-        <%-include("template/header")%>
+        <%-include("../template/header")%>
     </header>
 
     <div class="fw-bold text-center pt-5">
@@ -57,7 +58,7 @@
     
                 <div class="form-group d-flex justify content"id=soporte>
                     <span>No tienes cuenta? <a href="#">Recuperar Contraseña</a></span>
-                    <span><a href="/registrate.ejs">Registrate</a></span>
+                    <span><a href="">Registrate</a></span>
                 </div>
             </form>
             <br>
@@ -66,7 +67,7 @@
     </div>
 
     <footer>
-        <%-include("template/footer")%>
+        <%-include("../template/footer")%>
     </footer>
 </body>
 

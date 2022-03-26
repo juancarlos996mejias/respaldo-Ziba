@@ -1,32 +1,76 @@
-// load the things we need
-var express = require('express');
-const { sendfile } = require('express/lib/response');
-var app = express();
+const express = require('express');
 const path = require ('path');
+var app = express();
+// load the things we need
+
+
+
 
 /*app.use(express.static(__dirname + '/public/css/iconos'));*/
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/public')));
 
 
-
-
-// set the view engine to ejs
+// se/t the view engine to ejs
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname + '/views'));
+app.set('views', path.join(__dirname, '/views'));
+
+//rutas
+
+const mainRoutes = require ('./src/routes/mainRoutes');
+const productsRoutes = require ('./src/routes/productsRoutes');
+const userRoutes = require ('./src/routes/userRoutes');
+
+
+
+app.use('/',mainRoutes);
+app.use('/products',productsRoutes);
+app.use('/users',userRoutes);
+
+
+
+
+
+app.use((req,res,next)=>{
+    res.status(404).render("404",{
+       titulo:"ERROR",
+       descripcion: "404"
+   })
+});
+
+
+app.listen(3000,() =>{
+    console.log('servidor corriendo en el puerto 3000');
+});
+
+
 // use res.render to load up an ejs view file
+// ** RUTAS ** 
+
+
 
 // index page
+/*
+app.use('/,userRoutes');
+app.use('/',mainRoutes);
+*/
+
+
+
+
+
+
+/*
 app.get('/', function(req, res) {
     res.render('index', {titulo: "mi pagina dinamica"});//sirve para traer datos de base de datos {titulo:}
 });
 
 // about page
-app.get('/galeria', function(req, res) {
-    res.render("galeria",{tituloGaleria:"Renderizando vista de Galeria"})
+app.get('', function(req, res) {
+    res.render("",{tituloGaleria:"Renderizando vista de Galeria"})
 });
 
-app.get('/iniciarSesion', function(req, res) {
-    res.render("iniciarSesion",{tituloIniciarSesion:"Renderizando vista a Inicio de Sesion"})
+app.get('/inic', function(req, res) {
+    res.render("iniciar",{tituloIniciarSesion:"Renderizando vista a Inicio de Sesion"})
 });
 
 app.get('/registrate', function(req, res) {
@@ -40,18 +84,25 @@ app.get('/nosotros', function(req, res) {
 app.get('/contacto', function(req, res) {
     res.render("contacto",{tituloContacto:"Renderizando vista a Contacto"})
 })
+*/
 
 
-app.use((req,res,next)=>{
-     res.status(404).render("404",{
-        titulo:"ERROR",
-        descripcion: "404"
-    })
-})
 
 
-app.listen(3000);
-console.log('servidor corriendo en el puerto 3000');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

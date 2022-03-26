@@ -352,9 +352,7 @@ footer {
     margin-right: 40px;
 }
 
-.row {
- 
-}
+
 
 
 .row img {
@@ -576,4 +574,9 @@ color: #36A0FF;
     margin-left: 27%;
     width: 500px;
     margin-bottom: 30px;
+}
+
+.contenedor{
+  display: flex;  
+  
 }
