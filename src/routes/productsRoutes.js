@@ -10,6 +10,7 @@ const path = require ('path');
 router.get('/galeria', productsController.galeria);
 
 
+
 module.exports = router;
 
 

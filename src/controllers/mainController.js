@@ -12,13 +12,13 @@ const mainController = {
    
 
      nosotros: (req,res) => {
-        res.render ('aboutUs/nosotros');
+        res.render ('aboutUs/contacto');
        
      },
 
 
      contacto: (req,res) => {
-        res.render ('aboutUs/contacto');
+        res.render ('aboutUs/nosotros');
      },
 
      

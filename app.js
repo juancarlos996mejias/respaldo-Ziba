@@ -7,7 +7,7 @@ var app = express();
 
 
 /*app.use(express.static(__dirname + '/public/css/iconos'));*/
-app.use(express.static(path.join(__dirname, '/public')));
+app.use(express.static(path.join(__dirname, './public')));
 
 
 // se/t the view engine to ejs
