@@ -3,11 +3,55 @@ const path = require ('path');
 var app = express();
 // load the things we need
 
+const dotenv = require('dotenv');
+dotenv.config({path:'./env/.env'});
+
+const bcryptjs = require('bcryptjs');
 
 
+const session = require('express-session');
+app.use (session({
+    secret:'secret',
+    resave: true,
+    saveUninitialized:true
+}));
 
+/*const connection = require('./database/db');*/
+
+
+const mainRoutes = require ('./src/routes/mainRoutes');
+const productsRoutes = require ('./src/routes/productsRoutes');
+const userRoutes = require ('./src/routes/userRoutes');
+const { connect } = require('http2');
+const mysql = require('mysql');
+
+app.use(express.urlencoded({extended:false}));
 /*app.use(express.static(__dirname + '/public/css/iconos'));*/
 app.use(express.static(path.join(__dirname, './public')));
+app.use(express.json());
+
+
+const Connection = require('mysql/lib/Connection');
+const connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'proyect_ziba',
+    password: 'jc271181',
+    database: 'criolipolisis'
+});
+
+
+
+
+connection.connect((error)=>{
+    if(error){
+        console.log('El error de conexión es: '+error);
+        return;
+    }
+    console.log('¡Conectado a la base de datos!');
+});
+
+/*module.exports = connection;*/
+
 
 
 // se/t the view engine to ejs
@@ -15,11 +59,6 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
 
 //rutas
-
-const mainRoutes = require ('./src/routes/mainRoutes');
-const productsRoutes = require ('./src/routes/productsRoutes');
-const userRoutes = require ('./src/routes/userRoutes');
-
 
 
 app.use('/',mainRoutes);
@@ -39,7 +78,7 @@ app.use((req,res,next)=>{
 
 
 app.listen(3000,() =>{
-    console.log('servidor corriendo en el puerto 3000');
+    console.log('SERVER RUNNING IN PORT 3000');
 });
 
 
