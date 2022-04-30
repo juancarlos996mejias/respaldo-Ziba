@@ -7,10 +7,13 @@
 
 }
 
-#whatsapp-icon {
+.whatsapp { 
     height: 55px;
     width: 55px;
     margin-left: 90%;
+    margin-bottom: 20px;
+    cursor: pointer;
+    
 }
 
 body {
@@ -24,6 +27,7 @@ nav {
     background: #D5D5D5;
    
 }
+
 .logo{
 margin-left: 20px;
 width:130px;
@@ -190,11 +194,12 @@ nav li img {
 }
 
 button {
-    background-color: rgb(90, 201, 201);
-    border: none;
+    
+   
     color: white;
-    width: 100px;
+    width: 140px;
     height: 35px;
+    margin-left: 20px;
     margin-bottom: 30px;
     text-align: center;
     text-decoration: none;
@@ -204,6 +209,15 @@ button {
     cursor: pointer;
     border-radius: 10px;
 }
+
+.form-groupContenedor{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+
 
 
 
@@ -426,6 +440,66 @@ footer {
 
 
 }
+#message::placeholder{
+   background-image: url(/img/mensaje.svg); 
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    
+}
+#fname::placeholder{
+    background-image: url(/img/person-circle.svg); 
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    
+
+}
+#lname::placeholder{
+    background-image: url(/img/person-circle.svg); 
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+#email::placeholder{
+    background-image: url(/img/arroba.svg); 
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    
+}
+#email{
+    display: flex;
+}
+#phone::placeholder{
+    background-image: url(/img/telephone-fill.svg); 
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+#password::placeholder{
+    background-image: url(/img/candado2.svg);  
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: left center; 
+}
+
+#correo::placeholder{
+    background-image: url(/img/candado2.svg); 
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+.control-input{
+    margin-left: 193px;
+}
+.form-group-mail{
+    margin-left: 190px;
+}
+
+
+
 
 .colum3 {
     max-width: 450px;
@@ -499,34 +573,7 @@ font-size: 15px;
      margin-top: 60px;
 
 }
-.text-center{
-   padding-top: 8%; 
-}
 
-.form-group .i{
-    margin-bottom: 50px;
-}
-
-
-#lname{
-    padding: 8px;
-    width: 500px;
-}
-#email{
-    padding: 8px;
-    width: 500px;
-}
-#phone{
-    padding: 8px;
-    width: 500px;
-}
-#message{
-    width: 500px;   
-}
-.btn-btn-primary{
-    display:flex;
-    justify-content: center;
-}
 
 
 
@@ -545,6 +592,7 @@ color: #36A0FF;
 
 
 .form-control{
+    display: flex;
     padding: 8px;
     width: 500px; 
     margin-left: 27%;

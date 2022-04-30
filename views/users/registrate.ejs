@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/bootstrap5/bootstrap.min.css">
@@ -30,25 +31,25 @@
     <div class="container">
         <form action="#" class="">
             <h2 class="fw-bold text-center pt-5">REGISTRATE</h2>
-
+<div class="form-groupContenedor">
             <div class="form-group">
                 <label for="text" class="control-label col-md-8"></label>
                 <div class=" col-md-12">
-                    <input class="form-control" type="text" id="nombre" placeholder="Nombre y Apellido:">
+                    <input class="form-control" type="text" id="fname" placeholder="      Nombre y Apellido:">
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="email" class="control-label col-md-8"></label>
-                <div class="col-md-12">
-                    <input type="email" class="form-control" id="correo" placeholder="Correo Electronico:">
+                <div class="control-input col-md-12">
+                    <input type="email" class="form-control" id="email" placeholder="      Correo Electronico:">
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="password" class="control-label col-md-8"></label>
                 <div class="col-md-12">
-                    <input type="password" class="form-control" id="password" placeholder="Contraseña:">
+                    <input type="password" class="form-control" id="password" placeholder="      Contraseña:">
                 </div>
             </div>
             <br>
@@ -70,6 +71,7 @@
                         style="height: 100px"></textarea>
                 </div>
             </div>
+        </div>
             <br>
 
 
@@ -92,7 +94,7 @@
             <br>
             <div class="form-group ">
                 <div class="col-md-12 col -md-offset-2" id="botonRegistrate">
-                    <button class="btn btn-success col-md-12 " type="submit">REGISTRARME</button>
+                    <button class="btn btn-success col-md-12 "onclick="regitro()" type="button">REGISTRARME</button>
                 </div>
             </div>
         </form>
@@ -103,6 +105,27 @@
         <%-include('../template/footer')%>
     </footer>
     <script src="../js/bootstrap.bundle.min.js"></script>
+
+    <script type="text/javascript">
+        function regitro(){
+            let user = {
+                nombre: document.getelementById('nombre'),
+                user: document.getelementById('correo'),
+                password: document.getelementById('password')    
+            };
+
+            let response = await fetch('/user/registro', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify(user)
+            });
+
+            let result = await response.json();
+            alert(result.message);
+        }
+    </script>
     
  </body>
 

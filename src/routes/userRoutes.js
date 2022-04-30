@@ -4,7 +4,7 @@ const path = require ('path');
 
 router.get('/iniciarSesion', userController.iniciarSesion);
 router.get('/registrate', userController.registrate);
-router.get('/registrate', userController.registrate);
+
 
 router.post('/registro', userController.registro);
 
